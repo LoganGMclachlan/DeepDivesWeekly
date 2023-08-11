@@ -1,0 +1,51 @@
+body{
+    width:100%;
+    height:100vh;
+    margin:0px;
+    background-color:black;
+}
+
+.header{
+    width:100%;
+    height:100px;
+    margin:0px;
+    padding-top: 50px;
+    text-align:center;
+    color:yellow;
+}
+
+.tab-container{
+    width:100%;
+    min-height:10vh;;
+    padding:0px;
+}
+
+.tab{
+    width:33%;
+    height:10%;
+    margin:0px;
+    cursor:pointer;
+    background-color:grey;
+    color:white;
+}
+.tab:hover{
+    background-color:rgb(171, 171, 171);
+}
+
+.tab-selected{
+    width:33%;
+    height:10%;
+    margin:0px;
+    color:yellow;
+    background-color:rgb(61, 61, 61);
+}
+
+.body{
+    width:100%;
+    min-height:76vh;
+    background-color:rgb(61, 61, 61);
+}
+
+.dive-data{
+    text-align: center;
+}
