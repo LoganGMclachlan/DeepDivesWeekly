@@ -1,20 +1,19 @@
 import { useState } from "react"
 import StageInfo from './StageInfo'
 
-export default function DiveData({getDiveData}){
+export default function DiveData({getData}){
     const [diveData, setDiveData] = useState(null)
 
-    async function getData(variant){
-        let data = await getDiveData()
-        console.log(data.variants[variant])
+    async function getDiveData(variant){
+        let data = await getData()
         setDiveData(data.variants[variant])
     }
 
     return(
         <div className="dive-data">
-            <p><u onClick={() => getData(0)}>Regular </u>
+            <p><u onClick={() => getDiveData(0)}>Regular </u>
             or
-            <u onClick={() => getData(1)}> Elite</u></p>
+            <u onClick={() => getDiveData(1)}> Elite</u></p>
             {diveData
             ? <>
                 <h2>{diveData.name}</h2>

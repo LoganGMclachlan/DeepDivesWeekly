@@ -82,3 +82,10 @@ body{
 .dive-anomaly{
     color:rgb(224, 224, 14);
 }
+
+.big-button{
+    margin-top:30px;
+    width:250px;
+    height:50px;
+    font-size: 25px;
+}
