@@ -39,11 +39,11 @@ export default function App() {
       
       <div className='content'>
         {tabSelected === "DiveData" &&
-          <DiveData getDiveData={getData}/>
+          <DiveData getDiveData={() => getData("https://drgapi.com/v1/deepdives")}/>
         }
         <Suspense fallback="Loading...">
         {tabSelected === "Trivia" &&
-          <Trivia getTrivia={() => {getData("https://drgapi.com/v1/trivia")}}/>
+          <Trivia getTrivia={() => getData("https://drgapi.com/v1/trivia")}/>
         }
         {tabSelected === "Salutes" &&
           <Salutes getSalutes={() => {getData("https://drgapi.com/v1/salutes")}}/>

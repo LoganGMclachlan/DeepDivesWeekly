@@ -5,7 +5,7 @@ export default function DiveData({getDiveData}){
     const [diveData, setDiveData] = useState(null)
 
     async function getData(variant){
-        let data = await getDiveData("https://drgapi.com/v1/deepdives")
+        let data = await getDiveData()
         console.log(data.variants[variant])
         setDiveData(data.variants[variant])
     }
