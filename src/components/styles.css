@@ -44,8 +44,41 @@ body{
     width:100%;
     min-height:76vh;
     background-color:rgb(61, 61, 61);
+    text-align: center;
+    color:white;
 }
 
-.dive-data{
-    text-align: center;
+.dive-data h2{
+    color:yellow;
+    margin-bottom:-15px;
+    text-decoration: black;
+}
+
+.dive-data p u{
+    font-size: 25px;
+    cursor: pointer;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+.stage-container{
+    margin-left:14%
+}
+
+.stage{
+    width:24%;
+    margin-top:0px;
+    margin-left:2%;
+    margin-right:2%;
+    float:left;
+    text-align: centre;
+    color:black;
+    background-color:rgb(152, 152, 152);
+}
+
+.dive-warning{
+    color:red;
+}
+.dive-anomaly{
+    color:rgb(224, 224, 14);
 }

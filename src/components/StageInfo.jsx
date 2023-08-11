@@ -1,25 +1,15 @@
 
 export default function StageInfo({stage}){
     return(
-        <>
-        <ul>
-            <li><label>Primary: </label><p>{stage.primary}</p></li>
-
-            <li><label>Secondary: </label><p>{stage.secondary}</p></li>
-
-            <li><label>Anomaly: </label>
+        <div className="stage">
+            <p>{stage.primary}</p>
+            <p>{stage.secondary}</p>
             {stage.anomaly
-            ?<p>{stage.anomaly}</p>
-            :<p>None</p>
-            }</li>
-
-            <li><label>Warning: </label>
+            ?<p className="dive-anomaly">{stage.anomaly}</p>
+            :<p>No Anomaly</p>}
             {stage.warning
-            ?<p>{stage.warning}</p>
-            :<p>None</p>
-            }</li>
-        </ul>
-        <hr/>
-        </>
+            ?<p className="dive-warning">{stage.warning}</p>
+            :<p>No Warning</p>}
+        </div>
     )
 }

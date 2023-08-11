@@ -12,20 +12,21 @@ export default function DiveData({getDiveData}){
 
     return(
         <div className="dive-data">
+            <p><u onClick={() => getData(0)}>Regular </u>
+            or
+            <u onClick={() => getData(1)}> Elite</u></p>
             {diveData
             ? <>
                 <h2>{diveData.name}</h2>
                 <p>Biome: {diveData.biome}</p>
-                {diveData.stages.map(stage => {
-                    return (<StageInfo stage={stage} key={stage.id}/>)
-                })}
+                <div className="stage-container">
+                    {diveData.stages.map(stage => {
+                        return (<StageInfo stage={stage} key={stage.id}/>)
+                    })}
+                </div>
             </>    
             : <h2>Select a Dive</h2>
             }
-            
-            <p><u onClick={() => getData(0)}>Regular </u>
-            or
-            <u onClick={() => getData(1)}> Elite</u></p>
         </div>
     )
 }
