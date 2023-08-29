@@ -12,7 +12,7 @@ export default function Trivia({getData}){
     return(
         <>
             <img src={image} onClick={getTrivia} className='image'/><br/>
-            <button onClick={getTrivia} className='big-button'>Get Me Trivia!</button>
+            <button onClick={getTrivia} className='big-button'>Bottoms Up!</button>
             <p>{trivia}</p>
         </>
     )

@@ -2,6 +2,7 @@ import {useState, lazy, Suspense} from 'react'
 import DiveData from './components/DiveData'
 const Salutes = lazy(() => import('./components/Salutes'))
 const Trivia = lazy(() => import('./components/Trivia'))
+const Information = lazy(() => import('./components/Information'))
 
 export default function App() {
   const [tabSelected, setTabSelected] = useState("DiveData")
@@ -33,6 +34,10 @@ export default function App() {
             ? <th className='tab selected'><h2>Salutes</h2></th>
             : <th className='tab' onClick={() => {setTabSelected("Salutes")}}><h2>Salutes</h2></th>
           }
+          {tabSelected === "Info"
+            ? <th className='tab selected'><h2>Info</h2></th>
+            : <th className='tab' onClick={() => {setTabSelected("Info")}}><h2>Info</h2></th>
+          }
           </tr>
         </thead>
       </table>
@@ -47,6 +52,9 @@ export default function App() {
         }
         {tabSelected === "Salutes" &&
           <Salutes getData={() => getData("https://drgapi.com/v1/salutes")}/>
+        }
+        {tabSelected === "Info" &&
+          <Information/>
         }
         </Suspense>
       </div>
