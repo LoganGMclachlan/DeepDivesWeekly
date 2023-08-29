@@ -19,9 +19,9 @@ export default function DiveData({getData}){
                 <h2>{diveData.name}</h2>
                 <p>Biome: {diveData.biome}</p>
                 <div className="stage-container">
-                    {diveData.stages.map(stage => {
-                        return (<StageInfo stage={stage} key={stage.id}/>)
-                    })}
+                    {diveData.stages.map(stage => 
+                        <StageInfo stage={stage} key={stage.id}/>
+                    )}
                 </div>
             </>    
             : <h2>Select a Dive</h2>

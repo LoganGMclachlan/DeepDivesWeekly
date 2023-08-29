@@ -22,15 +22,15 @@ export default function App() {
         <thead>
           <tr>
           {tabSelected === "DiveData"
-            ? <th className='tab-selected'><h2>Dive Data</h2></th>
+            ? <th className='tab selected'><h2>Dive Data</h2></th>
             : <th className='tab' onClick={() => {setTabSelected("DiveData")}}><h2>Dive Data</h2></th>
           }
           {tabSelected === "Trivia"
-            ? <th className='tab-selected'><h2>Trivia</h2></th>
+            ? <th className='tab selected'><h2>Trivia</h2></th>
             : <th className='tab' onClick={() => {setTabSelected("Trivia")}}><h2>Trivia</h2></th>
           }
           {tabSelected === "Salutes"
-            ? <th className='tab-selected'><h2>Salutes</h2></th>
+            ? <th className='tab selected'><h2>Salutes</h2></th>
             : <th className='tab' onClick={() => {setTabSelected("Salutes")}}><h2>Salutes</h2></th>
           }
           </tr>

@@ -3,6 +3,12 @@ body{
     height:100vh;
     margin:0px;
     background-color:black;
+    background-image: url("../assets/background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(2px);
+    font-family: monospace;
 }
 
 .header{
@@ -10,8 +16,16 @@ body{
     height:100px;
     margin:0px;
     padding-top: 50px;
-    text-align:center;
-    color:yellow;
+    text-align:center;background: -webkit-linear-gradient(yellow, rgb(255, 166, 0));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 60px;
+    -webkit-text-stroke: 1.5px rgb(233, 124, 0);
+    font-family: fantasy;
+}
+.header:hover{
+    font-size: 65px;
 }
 
 .tab-container{
@@ -25,27 +39,30 @@ body{
     height:10%;
     margin:0px;
     cursor:pointer;
-    background-color:grey;
+    background-color:black;
     color:white;
+    cursor: pointer;
 }
 .tab:hover{
-    background-color:rgb(171, 171, 171);
+    text-decoration: underline;
+    border: 2px solid white
 }
 
-.tab-selected{
-    width:33%;
-    height:10%;
-    margin:0px;
-    color:yellow;
-    background-color:rgb(61, 61, 61);
+.selected{
+    color:orange;
+    border: 2px solid orange;
+}
+.selected:hover{
+    color: white;
 }
 
 .body{
     width:100%;
     min-height:76vh;
-    background-color:rgb(61, 61, 61);
+    background-color:black;
     text-align: center;
     color:white;
+    opacity: 95%;
 }
 
 .dive-data h2{
@@ -72,8 +89,9 @@ body{
     margin-right:2%;
     float:left;
     text-align: centre;
-    color:black;
-    background-color:rgb(152, 152, 152);
+    opacity: 100%;
+    color:orange;
+    border: 1px solid white;
 }
 
 .dive-warning{
