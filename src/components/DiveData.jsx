@@ -3,6 +3,7 @@ import StageInfo from './StageInfo'
 
 export default function DiveData({getData}){
     const [diveData, setDiveData] = useState(null)
+    let stageCount = 1
 
     async function getDiveData(variant){
         let data = await getData()
@@ -19,8 +20,8 @@ export default function DiveData({getData}){
                 <h2>{diveData.name}</h2>
                 <p>Biome: {diveData.biome}</p>
                 <div className="stage-container">
-                    {diveData.stages.map(stage => 
-                        <StageInfo stage={stage} key={stage.id}/>
+                    {diveData.stages.map(stage =>
+                        <StageInfo stage={stage} key={stage.id} stageCount={stageCount++}/>
                     )}
                 </div>
             </>    
