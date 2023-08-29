@@ -107,3 +107,11 @@ body{
     height:50px;
     font-size: 25px;
 }
+
+.image{
+    width:300px;
+    height:200px;
+    margin-bottom:-30px;
+    image-rendering: optimizeQuality;
+    cursor: pointer;
+}

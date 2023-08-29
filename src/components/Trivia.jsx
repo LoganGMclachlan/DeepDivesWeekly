@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import image from '../assets/smart-stout.jpg'
 
 export default function Trivia({getData}){
     const [trivia, setTrivia] = useState(null)
@@ -10,7 +11,7 @@ export default function Trivia({getData}){
 
     return(
         <>
-            <h2>Deep Rock Trivia</h2>
+            <img src={image} onClick={getTrivia} className='image'/><br/>
             <button onClick={getTrivia} className='big-button'>Get Me Trivia!</button>
             <p>{trivia}</p>
         </>
