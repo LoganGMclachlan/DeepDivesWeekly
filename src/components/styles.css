@@ -61,7 +61,8 @@ body{
 
 .body{
     width:100%;
-    min-height:76vh;
+    min-height:72.9vh;
+    padding-bottom: 20px;
     background-color:black;
     text-align: center;
     color:white;

@@ -40,11 +40,11 @@ export default function StageInfo({stage, stageCount}){
         {stage.anomaly === "Rich Atmosphere" && <img src={ra} className="icon"/>}
         {stage.anomaly === "Volatile Guts" && <img src={vg} className="icon"/>}
         
-        {stage.warning && <><br/></>}
+        {stage.warning && <><br/><br/></>}
         </>
         }
 
-        {stage.warning !== "" &&
+        {stage.warning &&
         <>
             <label className="dive-warning">{stage.warning}</label>
             {stage.warning === "Cave Leach Cluster" && <img src={clc} className="icon"/>}
