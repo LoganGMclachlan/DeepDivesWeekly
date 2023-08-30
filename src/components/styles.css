@@ -92,6 +92,7 @@ body{
 
 .stage{
     width:300px;
+    padding-bottom:10px;
     margin-top:0px;
     text-align: centre;
     opacity: 100%;
