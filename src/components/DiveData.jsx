@@ -1,5 +1,5 @@
-import { useState } from "react"
-import StageInfo from './StageInfo'
+import { useState, lazy, Suspense } from "react"
+const StageInfo = lazy(() => import('./StageInfo'))
 
 export default function DiveData({getData}){
     const [diveData, setDiveData] = useState(null)
@@ -21,7 +21,9 @@ export default function DiveData({getData}){
                 <p>Biome: {diveData.biome}</p>
                 <div className="stage-container">
                     {diveData.stages.map(stage =>
-                        <StageInfo stage={stage} key={stage.id} stageCount={stageCount++}/>
+                        <Suspense fallback="Loading stages" key={stage.id} >
+                            <StageInfo stage={stage} stageCount={stageCount++}/>
+                        </Suspense>
                     )}
                 </div>
             </>    
