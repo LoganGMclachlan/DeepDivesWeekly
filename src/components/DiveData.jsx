@@ -18,7 +18,7 @@ export default function DiveData({getData}){
             {diveData
             ? <>
                 <h2>{diveData.name}</h2>
-                <p>Biome: {diveData.biome}</p>
+                <p>Biome: {diveData.biome} | Seed: {diveData.seed}</p>
                 <div className="stage-container">
                     {diveData.stages.map(stage =>
                         <Suspense fallback="Loading stages" key={stage.id} >
