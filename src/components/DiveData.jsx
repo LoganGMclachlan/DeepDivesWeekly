@@ -3,7 +3,6 @@ const StageInfo = lazy(() => import('./StageInfo'))
 
 export default function DiveData({getData}){
     const [diveData, setDiveData] = useState(null)
-    let stageCount = 1
 
     async function getDiveData(variant){
         let data = await getData()
@@ -22,7 +21,7 @@ export default function DiveData({getData}){
                 <div className="stage-container">
                     {diveData.stages.map(stage =>
                         <Suspense fallback="Loading stages" key={stage.id} >
-                            <StageInfo stage={stage} stageCount={stageCount++}/>
+                            <StageInfo stage={stage}/>
                         </Suspense>
                     )}
                 </div>

@@ -16,7 +16,9 @@ export default function App() {
 
   return (
     <>
-    <h1 className='header'>DEEP DIVES WEEKLY</h1>
+    <div className='header'>
+      <h1  className='title'>DEEP DIVES WEEKLY</h1>
+    </div>
 
     <div className='body'>
       <table className='tab-container'>

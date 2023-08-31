@@ -1,4 +1,5 @@
 // importing anomaly icons
+import { useEffect } from "react"
 import cw from "../assets/icons/anomalies/critical_weakness.webp"
 import gr from "../assets/icons/anomalies/gold_rush.webp"
 import gb from "../assets/icons/anomalies/golden_bugs.webp"
@@ -21,11 +22,11 @@ import rp from "../assets/icons/warnings/rival_presence.webp"
 import sd from "../assets/icons/warnings/shield_disruption.webp"
 import s from "../assets/icons/warnings/swarmageddon.webp"
 
-export default function StageInfo({stage, stageCount}){
+export default function StageInfo({stage}){
 
     return(
     <div className="stage">
-        <h3 style={{color:"white",textDecoration:"underline"}}>Stage {stageCount}</h3>
+        <h3 style={{color:"white",textDecoration:"underline"}}>Stage {stage.id}</h3>
         <p>{stage.primary}</p>
         <p>{stage.secondary}</p>
 
@@ -51,7 +52,7 @@ export default function StageInfo({stage, stageCount}){
             {stage.warning === "Elite Threat" && <img src={et} className="icon"/>}
             {stage.warning === "Exploder Infestation" && <img src={ei} className="icon"/>}
             {stage.warning === "Haunted Cave" && <img src={hc} className="icon"/>}
-            {stage.warning === "Lethal  Enemies" && <img src={le} className="icon"/>}
+            {stage.warning === "Lethal Enemies" && <img src={le} className="icon"/>}
             {stage.warning === "Low Oxygen" && <img src={lo} className="icon"/>}
             {stage.warning === "Mactera Plague" && <img src={mp} className="icon"/>}
             {stage.warning === "Parasites" && <img src={p} className="icon"/>}
