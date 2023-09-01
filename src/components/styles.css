@@ -39,6 +39,9 @@ body{
     text-align: center;
     color:white;
     opacity: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .tab-container{
@@ -149,4 +152,12 @@ body{
     height:25px;
     margin-left:3px;
     margin-bottom: -7px;
+}
+
+.about{
+    border-bottom: 2px orange solid;
+}
+
+.patch-notes{
+    list-style-position: inside;
 }

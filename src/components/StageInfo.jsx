@@ -26,7 +26,7 @@ export default function StageInfo({stage}){
 
     return(
     <div className="stage">
-        <h3 style={{color:"white",textDecoration:"underline"}}>Stage {stage.id}</h3>
+        <h3 style={{color:"white",textDecoration:"underline"}}>Stage {stage.id}, Hazard {stage.hazard}</h3>
         <p>{stage.primary}</p>
         <p>{stage.secondary}</p>
 

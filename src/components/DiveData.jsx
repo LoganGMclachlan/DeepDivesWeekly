@@ -6,7 +6,41 @@ export default function DiveData({getData}){
 
     async function getDiveData(variant){
         let data = await getData()
-        setDiveData(data.variants[variant])
+
+        // gets requested stage data
+        data = data.variants[variant]
+        // assigns a new property "hazard" to each stage
+        if (variant === 0){
+            data.stages.map(stage => {
+                switch (stage.id) {
+                    case 1:
+                        stage.hazard = 3
+                        return stage
+                    case 2:
+                        stage.hazard = 3.5
+                        return stage
+                    case 3:
+                        stage.hazard = 3.5
+                        return stage
+                }
+            })
+        }
+        else{
+            data.stages.map(stage => {
+                switch (stage.id) {
+                    case 1:
+                        stage.hazard = 4.5
+                        return stage
+                    case 2:
+                        stage.hazard = 4
+                        return stage
+                    case 3:
+                        stage.hazard = 5.5
+                        return stage
+                }
+            })
+        }
+        setDiveData(data)
     }
 
     return(
@@ -17,7 +51,7 @@ export default function DiveData({getData}){
             {diveData
             ? <>
                 <h2>{diveData.name}</h2>
-                <p>Biome: {diveData.biome} | Seed: {diveData.seed}</p>
+                <p>Biome: {diveData.biome}<br/>Seed: {diveData.seed}</p>
                 <div className="stage-container">
                     {diveData.stages.map(stage =>
                         <Suspense fallback="Loading stages" key={stage.id} >
