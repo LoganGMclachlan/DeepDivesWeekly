@@ -4,11 +4,7 @@ const StageInfo = lazy(() => import('./StageInfo'))
 export default function DiveData({getData}){
     const [diveData, setDiveData] = useState(null)
 
-    async function getDiveData(variant){
-        let data = await getData()
-
-        // gets requested stage data
-        data = data.variants[variant]
+    function addHazards(data,variant){
         // assigns a new property "hazard" to each stage
         if (variant === 0){
             data.stages.map(stage => {
@@ -24,8 +20,7 @@ export default function DiveData({getData}){
                         return stage
                 }
             })
-        }
-        else{
+        }else{
             data.stages.map(stage => {
                 switch (stage.id) {
                     case 1:
@@ -40,7 +35,39 @@ export default function DiveData({getData}){
                 }
             })
         }
-        setDiveData(data)
+        return data
+    }
+
+    async function getDiveData(variant){
+        let data = await getData()
+        setDiveData(addHazards(data.variants[variant],variant))
+    }
+
+    function getColour(biome){
+        switch (biome) {
+            case "Radioactive Exclusion Zone":
+                return "lightgreen"
+            case "Azure Weald":
+                return "violet"
+            case "Crystalline Caverns":
+                return "lightblue"
+            case "Dense Biozone":
+                return "blue"
+            case "Fungus Bogs":
+                return "green"
+            case "Glacial Strata":
+                return "white"
+            case "Magma Core":
+                return "red"
+            case "Salt Pits":
+                return "lightred"
+            case "Sandblasted Corridors":
+                return "beige"
+            case "Hollow Bough":
+                return "brown"
+            default:
+                return "white";
+        }
     }
 
     return(
@@ -51,7 +78,8 @@ export default function DiveData({getData}){
             {diveData
             ? <>
                 <h2>{diveData.name}</h2>
-                <p>Biome: {diveData.biome}<br/>Seed: {diveData.seed}</p>
+                <p style={{color:getColour(diveData.biome)}}>Biome: {diveData.biome}</p>
+                <p>Seed: {diveData.seed}</p>
                 <div className="stage-container">
                     {diveData.stages.map(stage =>
                         <Suspense fallback="Loading stages" key={stage.id} >

@@ -1,9 +1,9 @@
 export default function PatchNotes(){
     const patchNotes = [
-        
         {version:1.2, date:"01/09/2023",
         changes:["Dive stages now display its hazard level.",
-                "Added patch notes section to info tab."]
+                "Added patch notes section to info tab.",
+                "Each dive biome now has its own unique colour."]
         },
         {version:1.1, date:"31/08/2023",
         changes:["Fixed issue where heading would clip below navigation bar on smaller screens."]
