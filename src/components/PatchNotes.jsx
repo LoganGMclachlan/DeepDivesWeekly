@@ -1,5 +1,8 @@
 export default function PatchNotes(){
     const patchNotes = [
+        {version:1.3, date:"06/09/2023",
+        changes:["Updated fonts for the title and the main content."]
+        },
         {version:1.2, date:"01/09/2023",
         changes:["Dive stages now display its hazard level.",
                 "Added patch notes section to info tab.",

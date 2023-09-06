@@ -4,7 +4,17 @@ body{
     margin:0px;
     background-color:black;
     backdrop-filter: blur(2px);
-    font-family: monospace;
+    font-family: body;
+}
+
+@font-face {
+    font-family: "title";
+    src: local("title"), url("../fonts/REDFIVE_.TTF") format("truetype");
+}
+@font-face {
+    font-family: "body";
+    src: local("body"), url("../fonts/ShareTech-Regular.ttf") format("truetype");
+    font-weight: bold;
 }
 
 .header{
@@ -23,8 +33,8 @@ body{
     background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 60px;
-    -webkit-text-stroke: 1px orangered;
-    font-family: fantasy;
+    -webkit-text-stroke: 1.5px orangered;
+    font-family: title;
 }
 
 @media screen and (max-width: 767px){
