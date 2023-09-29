@@ -1,5 +1,8 @@
 export default function PatchNotes(){
     const patchNotes = [
+        {version:1.4, date:"29/09/2023",
+        changes:["Fixed cave leech cluster icon not displayingx."]
+        },
         {version:1.3, date:"06/09/2023",
         changes:["Updated fonts for the title and the main content."]
         },

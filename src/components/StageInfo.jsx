@@ -48,7 +48,7 @@ export default function StageInfo({stage}){
         {stage.warning &&
         <>
             <label className="dive-warning">{stage.warning}</label>
-            {stage.warning === "Cave Leach Cluster" && <img src={clc} className="icon"/>}
+            {stage.warning === "Cave Leech Cluster" && <img src={clc} className="icon"/>}
             {stage.warning === "Elite Threat" && <img src={et} className="icon"/>}
             {stage.warning === "Exploder Infestation" && <img src={ei} className="icon"/>}
             {stage.warning === "Haunted Cave" && <img src={hc} className="icon"/>}
