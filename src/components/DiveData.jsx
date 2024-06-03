@@ -4,43 +4,23 @@ const StageInfo = lazy(() => import('./StageInfo'))
 export default function DiveData({getData}){
     const [diveData, setDiveData] = useState(null)
 
-    function addHazards(data,variant){
-        // assigns a new property "hazard" to each stage
-        if (variant === 0){
-            data.stages.map(stage => {
-                switch (stage.id) {
-                    case 1:
-                        stage.hazard = 3
-                        return stage
-                    case 2:
-                        stage.hazard = 3.5
-                        return stage
-                    case 3:
-                        stage.hazard = 3.5
-                        return stage
-                }
-            })
-        }else{
-            data.stages.map(stage => {
-                switch (stage.id) {
-                    case 1:
-                        stage.hazard = 4.5
-                        return stage
-                    case 2:
-                        stage.hazard = 4
-                        return stage
-                    case 3:
-                        stage.hazard = 5.5
-                        return stage
-                }
-            })
-        }
-        return data
-    }
-
     async function getDiveData(variant){
         let data = await getData()
         setDiveData(addHazards(data.variants[variant],variant))
+    }
+
+    function addHazards(data,variant){
+        // assigns a new property "hazard" to each stage
+        if (variant === 0){
+            data.stages[0].hazard = 3
+            data.stages[1].hazard = 3.5
+            data.stages[2].hazard = 3.5
+        }else{
+            data.stages[0].hazard = 4.5
+            data.stages[1].hazard = 5
+            data.stages[2].hazard = 5.5
+        }
+        return data
     }
 
     function getColour(biome){
