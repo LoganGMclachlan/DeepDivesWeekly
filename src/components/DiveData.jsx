@@ -1,8 +1,10 @@
-import { useState, lazy, Suspense } from "react"
+import { useState, lazy, Suspense, useEffect } from "react"
 const StageInfo = lazy(() => import('./StageInfo'))
 
 export default function DiveData({getData}){
     const [diveData, setDiveData] = useState(null)
+
+    useEffect(() => {getDiveData(0)},[])
 
     async function getDiveData(variant){
         let data = await getData()
@@ -55,11 +57,9 @@ export default function DiveData({getData}){
             <p><u onClick={() => getDiveData(0)}>Regular </u>
             or
             <u onClick={() => getDiveData(1)}> Elite</u></p>
-            {diveData
-            ? <>
+            {diveData && <>
                 <h2>{diveData.name}</h2>
                 <p style={{color:getColour(diveData.biome)}}>Biome: {diveData.biome}</p>
-                <p>Seed: {diveData.seed}</p>
                 <div className="stage-container">
                     {diveData.stages.map(stage =>
                         <Suspense fallback="Loading stages" key={stage.id} >
@@ -67,9 +67,7 @@ export default function DiveData({getData}){
                         </Suspense>
                     )}
                 </div>
-            </>    
-            : <h2>Select a Dive</h2>
-            }
+            </>}
         </div>
     )
 }
