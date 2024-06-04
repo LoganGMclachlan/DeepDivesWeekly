@@ -1,5 +1,4 @@
 // importing anomaly icons
-import { useEffect } from "react"
 import cw from "../assets/icons/anomalies/critical_weakness.webp"
 import gr from "../assets/icons/anomalies/gold_rush.webp"
 import gb from "../assets/icons/anomalies/golden_bugs.webp"

@@ -171,3 +171,7 @@ body{
     list-style-position: inside;
     font-size: smaller;
 }
+
+.record-details b{
+    margin-right:20px
+}

@@ -1,9 +1,10 @@
 import { useState, useEffect, useCallback } from "react"
 import { db } from "../config/firebase"
 import { getDocs, collection } from 'firebase/firestore'
+import Record from "./Record"
 
 export default function DiveRecords(){
-    const [records, setRecords] = useState([])
+    const [records, setRecords] = useState([{"Title":"Loading Records..."}])
 
     useEffect(() => {getRecords()}, [])
 
@@ -19,9 +20,7 @@ export default function DiveRecords(){
 
     return(
     <>
-    {records.map(record => <div>
-        <h1>{record.Title}</h1>
-    </div>)}
+    {records.map(record => <Record record={record} key={record.id}/>)}
     </>
     )
 }
