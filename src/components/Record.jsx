@@ -21,31 +21,32 @@ export default function Record({record}){
     }
 
     return(
-    <div>
+    <div className="record">
         <h1>{record.Title}</h1>
         {record["Completion Time"] && <>
             <h2 style={{"color":"yellow"}}>Completed in: {record["Completion Time"]}</h2>
             
-            {hide ? <button onClick={() => setHide(false)}>Show More</button> 
-            :<>
+            {hide ? <button onClick={() => setHide(false)}
+                        className="record-btn">Show More +</button> 
+            :<div className="record-expand">
                 <div className="record-details">
                     Biome: {record.Biome}<b/>
                     Type: {record.Type}<b/>
                     Date: {convertTimestamp(record.Date)}
                 </div>
-                <div>
-                    <h3>Players</h3>
-                    <div className="player-list">
-                        {record.Team.map(player => <p>{player}</p>)}
-                    </div>
+                <div className="player-list">
+                    <p>Players:</p>
+                    {record.Team.map(player => <p>{player}</p>)}
                 </div>
                 <div className="stage-container">
                     <StageInfo stage={convertStage(record["Stage 1"],1)}/>
                     <StageInfo stage={convertStage(record["Stage 2"],2)}/>
                     <StageInfo stage={convertStage(record["Stage 3"],3)}/>
                 </div>
-                <button onClick={() => setHide(true)}>Show Less</button>
-            </>}
+                <br/>
+                <button onClick={() => setHide(true)}
+                    className="record-btn">Show Less -</button>
+            </div>}
         </>}
     </div>
     )

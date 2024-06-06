@@ -19,8 +19,8 @@ export default function DiveRecords(){
     })
 
     return(
-    <>
-    {records.map(record => <Record record={record} key={record.id}/>)}
-    </>
+    <div className="record-list">
+        {records.map(record => <Record record={record}/>)}
+    </div>
     )
 }
