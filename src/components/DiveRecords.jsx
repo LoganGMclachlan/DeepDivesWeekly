@@ -21,6 +21,8 @@ export default function DiveRecords(){
     return(
     <div className="record-list">
         {records.map(record => <Record record={record}/>)}
+        <button onClick={() => console.log("add record")}
+            className="record-btn" style={{"width":"100%"}}>Add Record</button>
     </div>
     )
 }
