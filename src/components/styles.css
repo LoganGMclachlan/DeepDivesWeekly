@@ -3,7 +3,6 @@ body{
     height:100vh;
     margin:0px;
     background-color:rgb(1, 9, 0);
-    backdrop-filter: blur(2px);
     font-family: body;
 }
 
@@ -222,4 +221,35 @@ body{
     border-top: 2px solid orange;
     padding-bottom: 15px;
     width: 100%;
+}
+
+.record-form{
+    position: fixed;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background: black;
+    padding:20px;
+    border: 2px solid orange;
+}
+
+.record-form input, select, button, b{
+    background: black;
+    padding:2px;
+    border: 2px solid orange;
+    color: white;
+    margin: 5px;
+    text-align: center;
+}
+.record-form h2{
+    color: yellow;
+}
+.record-form button{
+    padding: 5px;
+    width:30%;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+.record-form button:hover{
+    border-color: white;
 }

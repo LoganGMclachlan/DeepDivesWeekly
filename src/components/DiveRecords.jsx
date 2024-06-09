@@ -2,9 +2,11 @@ import { useState, useEffect, useCallback } from "react"
 import { db } from "../config/firebase"
 import { getDocs, collection } from 'firebase/firestore'
 import Record from "./Record"
+import RecordForm from "./RecordForm"
 
 export default function DiveRecords(){
     const [records, setRecords] = useState([{"Title":"Loading Records..."}])
+    const [showForm, setShowForm] = useState(false)
 
     useEffect(() => {getRecords()}, [])
 
@@ -19,10 +21,13 @@ export default function DiveRecords(){
     })
 
     return(
-    <div className="record-list">
-        {records.map(record => <Record record={record}/>)}
-        <button onClick={() => console.log("add record")}
-            className="record-btn" style={{"width":"100%"}}>Add Record</button>
-    </div>
+    <>
+        <div className="record-list">
+            {records.map(record => <Record record={record}/>)}
+            <button onClick={() => setShowForm(true)}
+                className="record-btn" style={{"width":"100%"}}>Add Record</button>
+        </div>
+        {showForm && <RecordForm setShowForm={setShowForm}/>}
+    </>
     )
 }
