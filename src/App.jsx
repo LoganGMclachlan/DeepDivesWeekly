@@ -10,8 +10,7 @@ export default function App() {
 
   async function getData(url){
       return await fetch(url)
-        .then(res => res.json())
-        .then(data => {return data})
+        .then(res => {return res.json()})
         .catch(err => console.log(err))
   }
 

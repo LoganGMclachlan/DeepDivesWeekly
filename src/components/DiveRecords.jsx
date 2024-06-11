@@ -27,7 +27,7 @@ export default function DiveRecords(){
             <button onClick={() => setShowForm(true)}
                 className="record-btn" style={{"width":"100%"}}>Add Record</button>
         </div>
-        {showForm && <RecordForm setShowForm={setShowForm}/>}
+        {showForm && <RecordForm setShowForm={setShowForm} getRecords={getRecords}/>}
     </>
     )
 }
