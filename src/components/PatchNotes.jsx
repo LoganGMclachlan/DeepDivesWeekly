@@ -1,5 +1,9 @@
 export default function PatchNotes(){
     const patchNotes = [
+        {version:1.6, date:"11/06/2024",
+        changes:["Added form to record dive times",
+                "Added bug report section"]
+        },
         {version:1.5, date:"07/06/2024",
         changes:["General Style changes.",
                 "Moves rock and stone button to trivia tab",
