@@ -3,12 +3,12 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBIZanYfhnUbm8BTgfHJbYd-CMWLa-lWWk",
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
     authDomain: "deep-dives-weekly.firebaseapp.com",
     projectId: "deep-dives-weekly",
     storageBucket: "deep-dives-weekly.appspot.com",
-    messagingSenderId: "872280320528",
-    appId: "1:872280320528:web:bdcdbd1dcbd305e2f5f895"
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MSG_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 // Initialize Firebase
