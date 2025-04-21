@@ -223,3 +223,9 @@ body{
     padding-bottom: 15px;
     width: 100%;
 }
+
+.record-tab-button-container{
+    width:100vw;
+    display: flex;
+    justify-content:space-between;
+}
